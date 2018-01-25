@@ -1,0 +1,23 @@
+server {
+        listen 80;
+        server_name 192.168.57.20;
+        root /home/wwwdev/ussr_rust_webapp_ci;
+        autoindex on;
+        index index.php index.html;
+
+        location / {
+
+            try_files $uri $uri/ /index.php;
+
+            location = /index.php {
+
+                fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+                fastcgi_param  SCRIPT_FILENAME /home/wwwdev/ussr_rust_webapp_ci$fastcgi_script_name;
+                include fastcgi_params;
+            }
+        }
+
+        location ~ \.php$ {
+            return 444;
+        }
+}

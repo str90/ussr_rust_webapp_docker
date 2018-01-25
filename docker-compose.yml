@@ -1,0 +1,40 @@
+version: "3.1"
+services:
+  nginx:
+    build: ./nginx
+    volumes:
+      - "./webapp:/usr/share/nginx/html:ro"
+    networks:
+      - webserver
+    ports:
+      - "8080:80"
+    depends_on:
+      - php7
+
+  php7:
+    build: ./php7
+    volumes:
+      - "./webapp:/var/www/html:ro"
+    networks:
+      - webserver
+      - db
+    ports:
+      - "9000:9000"
+    depends_on:
+      - mariadb
+
+  mariadb:
+    build: ./mariadb
+    restart: always
+    networks:
+      - db
+    environment:
+      MYSQL_ROOT_PASSWORD: 12563strhl
+    volumes:
+    - ./db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+networks:
+  webserver:
+  db:
