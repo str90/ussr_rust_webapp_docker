@@ -12,7 +12,7 @@ $(document).ready(function() {
 
     $.ajax({
       type: "POST",
-        url: "http://192.168.57.181/CartUSSR/ym_native",
+        url: "http://127.0.0.1/CartUSSR/ym_native",
       success: function(data) {
         $(".pay_amount").val(data);
       },
@@ -29,7 +29,7 @@ $(document).ready(function() {
 
     $.ajax({
       type: "POST",
-        url: "http://192.168.57.181/CartUSSR/ym_card",
+        url: "http://127.0.0.1/CartUSSR/ym_card",
       success: function(data) {
         $(".pay_amount").val(data);
       },
@@ -41,10 +41,9 @@ $(document).ready(function() {
 
   if($("#clear_basket").on('click', function(e) {
     e.preventDefault();
-
     $.ajax({
       type: "POST",
-        url: "http://192.168.57.181/CartUSSR/clear_cart",
+        url: "http://127.0.0.1/CartUSSR/clear_cart",
       success: function(data) {
         $(".clear_basket_msg").show();
         setTimeout(function() { $(".clear_basket_msg").hide(); }, 3000);
@@ -55,5 +54,4 @@ $(document).ready(function() {
       }
     }); //ajax close
   })); //YM_Card close
-
 }); //document.ready close

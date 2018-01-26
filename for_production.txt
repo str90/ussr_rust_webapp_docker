@@ -1,0 +1,6 @@
+1) Change all passwords (db, etc)
+2) Delete CORS directive from nginx.conf
+3) Change server name in nginx.conf
+4) Implement SSL
+5) Delete xdebug
+6) Change Codeigniter config variable to production state

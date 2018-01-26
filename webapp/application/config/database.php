@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => 'mariadb',
 	'username' => 'ussr_rust_db_user',
 	'password' => 'j8Ko-!AxZ,B7=Q',
 	'database' => 'ussr_rust_server_db',
