@@ -29,7 +29,7 @@ services:
     networks:
       - db
     environment:
-      MYSQL_ROOT_PASSWORD: 12563strhl
+      MYSQL_ROOT_PASSWORD: huevopedro1315yaebusobak
     volumes:
     - "./mariadb/db_data:/var/lib/mysql"
     ports:
